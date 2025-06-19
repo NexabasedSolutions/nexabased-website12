@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexabased Solutions - KI-gestützte Voice Agents</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="sticker-style.css">
+    <!-- Favicon - using the logo -->
+    <link rel="icon" href="logo.png" type="image/png">
+    
+    <!-- VAPI SDK -->
+    <script src="https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js" defer></script>
+    
+    <style>
+        /* VAPI Floating Button Styles */
+        .vapi-floating-btn {
+            position: fixed !important;
+            bottom: 20px !important;
+            right: 20px !important;
+            z-index: 9999 !important;
+            width: 60px !important;
+            height: 60px !important;
+            border-radius: 50% !important;
+            background: #1da1f2 !important;
+            border: none !important;
+            cursor: pointer !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            color: white !important;
+            font-size: 20px !important;
+            box-shadow: 0 4px 15px rgba(29, 161, 242, 0.4) !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .vapi-floating-btn:hover {
+            background: #0d8bd9 !important;
+            transform: scale(1.1) !important;
+        }
+        
+        .vapi-floating-btn::before {
+            content: "📞";
+            font-size: 24px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .vapi-floating-btn {
+                width: 50px !important;
+                height: 50px !important;
+                bottom: 15px !important;
+                right: 15px !important;
+            }
+            .vapi-floating-btn::before {
+                font-size: 20px;
+            }
+        }
+        
+        /* VAPI Widget Styles */
+        [data-vapi-widget] {
+            z-index: 10000 !important;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#hero"><img src="logo.png" alt="Nexabased Solutions Logo" id="logo"></a>
+            <ul class="nav-links">
+                <li><a href="#about-product">Produkt</a></li>
+                <li><a href="#pricing">Preise</a></li>
+                <li><a href="#ai-quotes">Über KI</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+                <li><a href="#contact" class="nav-cta">Demo buchen</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <img src="logo.png" alt="KI Voice Agent Illustration" class="hero-image">
+            <h2>Ihr Telefon nimmt ab – auch wenn niemand da ist</h2>
+            <p>Stellen Sie sich vor, ein Anruf kommt rein – aber niemand ist am Platz. Trotzdem wird der Anrufer freundlich begrüßt, verstanden und erhält einen fixen Termin in Ihrem Kalender. Genau das übernimmt unser KI-Voice Assistant für Sie.</p>
+            <div class="hero-cta-container hero-sticker">
+                <a href="#" class="cta-button demo-btn" id="demo-button">Jetzt Demo buchen</a>
+                <img src="sticker.png" alt="Jetzt Termin buchen und 2Wochen Kostenlose Testphase sichern" class="sticker-image-right">
+            </div>
+        </section>
+
+        <section id="about-product">
+            <h3>Ihr smarter KI-Voice Assistant</h3>
+            <p>Unser Assistant klingt wie Ihr Team, reagiert smart – und entlastet den Alltag. Er übernimmt die Anrufannahme und Terminbuchung, damit Sie sich auf Ihr Kerngeschäft konzentrieren können.</p>
+            <div class="benefits-container">
+                <div class="benefit-item">
+                    <span class="benefit-icon">📞</span>
+                    <h4>Keine verpassten Anrufe</h4>
+                    <p>Unser Agent ist immer erreichbar, auch außerhalb der Geschäftszeiten.</p>
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-icon">📅</span>
+                    <h4>Automatische Terminbuchung</h4>
+                    <p>Termine werden direkt und fehlerfrei in Ihren Kalender eingetragen.</p>
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-icon">⏱️</span>
+                    <h4>24/7 Verfügbarkeit</h4>
+                    <p>Bieten Sie Ihren Kunden Service rund um die Uhr, wenn gewünscht.</p>
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-icon">💡</span>
+                    <h4>Intelligente Gesprächsführung</h4>
+                    <p>Erkennt Anruferabsichten und führt natürliche Dialoge.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing">
+            <h3>Unsere Preismodelle</h3>
+            <!-- Pricing content will be added here -->
+        </section>
+
+        <section id="next-steps">
+            <h3>Interessiert? Ihre nächsten Schritte</h3>
+            <p>Wählen Sie, wie unser intelligenter Assistent Sie unterstützen soll, und erleben Sie die Vorteile selbst.</p>
+            <div class="next-steps-container">
+                <div class="next-step-item">
+                    <span class="next-step-icon">📅</span>
+                    <h4>Komplette Rezeptionskraft</h4>
+                    <p>Der KI-Assistent agiert als vollwertige Rezeptionskraft, bucht und verwaltet Termine direkt in Ihrem Kalender und entlastet so Ihr Team nachhaltig.</p>
+                </div>
+                <div class="next-step-item">
+                    <span class="next-step-icon">📧</span>
+                    <h4>Intelligenter Anrufbeantworter</h4>
+                    <p>Wenn Sie nicht erreichbar sind, nimmt der Assistent Anrufe entgegen, fasst die wichtigsten Informationen zusammen und leitet diese umgehend per E-Mail an Sie weiter.</p>
+                </div>
+            </div>
+            <div class="next-steps-cta-container">
+                <img src="IMG_1134.JPG" alt="Demo Sticker" class="sticker-image-left">
+                <a href="#" class="cta-button demo-btn">Demo anfordern</a>
+            </div>
+        </section>
+
+        <section id="ai-quotes">
+            <h3>Inspirierende Gedanken zur KI-Zukunft</h3>
+            <p>Einige Perspektiven von Vordenkern über das Potenzial künstlicher Intelligenz.</p>
+            <div class="quotes-container">
+                <div class="quote-item">
+                    <blockquote>"AI will not replace humans, but those who use AI will replace those who don't."</blockquote>
+                    <cite>– Ginni Rometty, Former CEO of IBM</cite>
+                </div>
+                <div class="quote-item">
+                    <blockquote>"AI is the new electricity."</blockquote>
+                    <cite>– Andrew Ng, Co-founder of Google Brain and Coursera</cite>
+                </div>
+                <div class="quote-item">
+                    <blockquote>"The future of AI is not about replacing humans, it's about augmenting human capabilities."</blockquote>
+                    <cite>– Sundar Pichai, CEO of Google</cite>
+                </div>
+                <div class="quote-item">
+                    <blockquote>"I imagine a world in which AI is going to make us work more productively, live longer, and have cleaner energy."</blockquote>
+                    <cite>– Fei-Fei Li, Professor of Computer Science at Stanford University</cite>
+                </div>
+                <div class="quote-item">
+                    <blockquote>"What all of us have to do is to make sure we are using AI in a way that is for the benefit of humanity, not to the detriment of humanity."</blockquote>
+                    <cite>– Tim Cook, CEO of Apple</cite>
+                </div>
+                <div class="quote-item">
+                    <blockquote>"The promise of artificial intelligence and computer science generally vastly outweighs the impact it could have on some jobs... it opened a much wider door to human progress."</blockquote>
+                    <cite>– Paul Allen, Co-Founder of Microsoft</cite>
+                </div>
+            </div>
+        </section>
+
+        <section id="coming-soon">
+            <h3>Coming Soon: Unsere nächsten Innovationen</h3>
+            <!-- Coming soon content -->
+        </section>
+
+        <section id="about-us">
+            <h3>Über Uns</h3>
+            <p>Nexabased Solutions Gbr wurde von zwei jungen, sportbegeisterten Entwicklern gegründet, mit dem Ziel, durch innovative KI-Lösungen echten Mehrwert zu schaffen. Wir entwickeln maßgeschneiderte KI-Anwendungen, beginnend mit unserem intelligenten Voice Agent für die Terminbuchung. Weitere spannende Projekte sind bereits in Planung.</p>
+        </section>
+
+        <section id="contact">
+            <h3>Kontakt</h3>
+            <!-- Contact form and information -->
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Nexabased Solutions. Alle Rechte vorbehalten.</p>
+            <div class="footer-links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="agb.html">AGB</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- VAPI Floating Button -->
+    <button id="vapi-floating-button" class="vapi-floating-btn" style="display: none;"></button>
+
+    <script>
+        // VAPI Integration Script
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚀 VAPI Integration wird geladen...');
+            
+            // WICHTIG: Ersetzen Sie diese Werte mit Ihren echten VAPI-Zugangsdaten
+            const VAPI_CONFIG = {
+                apiKey: "YOUR_VAPI_API_KEY", // Ersetzen Sie dies mit Ihrem Public Key
+                assistant: "YOUR_ASSISTANT_ID" // Ersetzen Sie dies mit Ihrer Assistant ID
+            };
+            
+            let vapiInstance = null;
+            
+            // Warten bis VAPI SDK geladen ist
+            function initializeVAPI() {
+                if (typeof window.vapiSDK === 'undefined') {
+                    console.log('⏳ Warte auf VAPI SDK...');
+                    setTimeout(initializeVAPI, 500);
+                    return;
+                }
+                
+                try {
+                    console.log('✅ VAPI SDK gefunden, initialisiere...');
+                    
+                    // VAPI ohne automatischen Button initialisieren
+                    vapiInstance = window.vapiSDK.run({
+                        apiKey: VAPI_CONFIG.apiKey,
+                        assistant: VAPI_CONFIG.assistant,
+                        config: {
+                            // Kein automatischer Button
+                            show: false
+                        }
+                    });
+                    
+                    console.log('✅ VAPI erfolgreich initialisiert');
+                    
+                    // Floating Button anzeigen
+                    showFloatingButton();
+                    
+                    // Demo-Buttons konfigurieren
+                    setupDemoButtons();
+                    
+                } catch (error) {
+                    console.error('❌ Fehler beim Initialisieren von VAPI:', error);
+                }
+            }
+            
+            // Floating Button anzeigen und konfigurieren
+            function showFloatingButton() {
+                const floatingBtn = document.getElementById('vapi-floating-button');
+                if (floatingBtn) {
+                    floatingBtn.style.display = 'flex';
+                    floatingBtn.addEventListener('click', startVAPICall);
+                    console.log('✅ Floating Button aktiviert');
+                }
+            }
+            
+            // Demo-Buttons konfigurieren
+            function setupDemoButtons() {
+                const demoButtons = document.querySelectorAll('.demo-btn, #demo-button');
+                let buttonsConfigured = 0;
+                
+                demoButtons.forEach(button => {
+                    button.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        console.log('🎯 Demo-Button geklickt:', button.textContent);
+                        startVAPICall();
+                    });
+                    buttonsConfigured++;
+                });
+                
+                console.log(`✅ ${buttonsConfigured} Demo-Buttons konfiguriert`);
+            }
+            
+            // VAPI Anruf starten
+            function startVAPICall() {
+                if (!vapiInstance) {
+                    console.error('❌ VAPI Instance nicht verfügbar');
+                    alert('VAPI ist noch nicht bereit. Bitte versuchen Sie es in einem Moment erneut.');
+                    return;
+                }
+                
+                try {
+                    console.log('📞 Starte VAPI Anruf...');
+                    vapiInstance.start();
+                    console.log('✅ VAPI Anruf gestartet');
+                } catch (error) {
+                    console.error('❌ Fehler beim Starten des VAPI Anrufs:', error);
+                    alert('Fehler beim Starten des Anrufs. Bitte versuchen Sie es erneut.');
+                }
+            }
+            
+            // Burger Menu (bestehende Funktionalität)
+            const burger = document.querySelector('.burger');
+            const nav = document.querySelector('.nav-links');
+            const navLinks = document.querySelectorAll('.nav-links li');
+
+            if (burger && nav) {
+                burger.addEventListener('click', () => {
+                    nav.classList.toggle('nav-active');
+                    navLinks.forEach((link, index) => {
+                        if (link.style.animation) {
+                            link.style.animation = '';
+                        } else {
+                            link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                        }
+                    });
+                    burger.classList.toggle('toggle');
+                });
+            }
+
+            if (navLinks.length > 0 && nav && burger) {
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (nav.classList.contains('nav-active')) {
+                            nav.classList.remove('nav-active');
+                            burger.classList.remove('toggle');
+                            navLinks.forEach(innerLink => {
+                                innerLink.style.animation = '';
+                            });
+                        }
+                    });
+                });
+            }
+            
+            // VAPI initialisieren
+            initializeVAPI();
+        });
+    </script>
+</body>
+</html>
+
